@@ -1,0 +1,9 @@
+### IDEA
+.idea
+
+### Gradle template
+.gradle
+build
+
+*.log
+
