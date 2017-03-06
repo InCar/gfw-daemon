@@ -16,6 +16,21 @@ class VPNKeeper {
                 s_logger.info("PING OK");
             } else {
                 s_logger.info("PING FAILED");
+                VPNOff vpnOffTask = new VPNOff();
+                vpnOffTask.exec("ppp0");
+                if(vpnOffTask.isOkay()){
+                    s_logger.info("VPN ON...");
+                    VPNOn vpnOnTask = new VPNOn();
+                    vpnOnTask.exec("InCarVPN");
+                    if(vpnOnTask.isOkay()){
+                        s_logger.info("Add routes...");
+                        CmdTask routesTask = new CmdTask();
+                        routesTask.exec("/root/p0-route.sh");
+                        if(routesTask.isOkay()){
+                            s_logger.info("OK!");
+                        }
+                    }
+                }
             }
 
             // wait for next checking
