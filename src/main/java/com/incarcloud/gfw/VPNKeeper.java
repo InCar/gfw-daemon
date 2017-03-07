@@ -13,7 +13,7 @@ class VPNKeeper {
             PingTask pingTask = new PingTask();
             pingTask.exec(ping);
             if (pingTask.isOkay()) {
-                s_logger.info("PING OK");
+                s_logger.debug("PING OK");
             } else {
                 s_logger.info("PING FAILED");
                 VPNOff vpnOffTask = new VPNOff();
