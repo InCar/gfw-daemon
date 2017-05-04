@@ -25,9 +25,7 @@ public class VPNOn extends CmdTask {
             if(!bOk) Thread.sleep(500);
             nRetry++;
             if(nRetry > s_nRetryMax){
-                if(s_logger == null) s_logger = LoggerFactory.getLogger(VPNOff.class);
-                s_logger.error("VPNOn failed!");
-                throw new InterruptedException("VPN On failed!");
+                return false;
             }
         }while(!bOk);
 
@@ -35,5 +33,4 @@ public class VPNOn extends CmdTask {
     }
 
     private static int s_nRetryMax = 5;
-    private Logger s_logger = null;
 }

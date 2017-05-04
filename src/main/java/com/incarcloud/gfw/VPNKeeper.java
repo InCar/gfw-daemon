@@ -29,6 +29,10 @@ class VPNKeeper {
                         if(routesTask.isOkay()){
                             s_logger.info("OK!");
                         }
+                    }else{
+                        s_logger.warn("VPNOn failed!");
+                        // wait more time before retry
+                        Thread.sleep(1000*checkInterval);
                     }
                 }
             }
