@@ -1,6 +1,3 @@
 gfw:
     ping: 8.8.8.8
     vpn: InCarVPN
-
-spring:
-    profiles.active: dev
