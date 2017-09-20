@@ -21,7 +21,7 @@ class VPNKeeper {
                 if(vpnOffTask.isOkay()){
                     s_logger.info("VPN ON...");
                     VPNOn vpnOnTask = new VPNOn();
-                    vpnOnTask.exec("InCarVPN");
+                    vpnOnTask.exec(vpn);
                     if(vpnOnTask.isOkay()){
                         s_logger.info("Add routes...");
                         CmdTask routesTask = new CmdTask();

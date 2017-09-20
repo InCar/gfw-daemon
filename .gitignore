@@ -1,5 +1,6 @@
 ### IDEA
 .idea
+*.iml
 
 ### Gradle template
 .gradle
@@ -7,3 +8,4 @@ build
 
 *.log
 gradle.properties
+
